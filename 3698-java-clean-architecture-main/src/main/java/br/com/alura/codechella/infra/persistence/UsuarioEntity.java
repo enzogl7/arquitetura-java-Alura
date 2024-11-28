@@ -1,5 +1,6 @@
-package br.com.alura.codechella.naousar.model;
+package br.com.alura.codechella.infra.persistence;
 
+import br.com.alura.codechella.domain.entities.usuario.Usuario;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public class UsuarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
@@ -58,4 +59,16 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public UsuarioEntity() {
+
+    }
+
+    public UsuarioEntity(String cpf, String nome, LocalDate nascimento, String email) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.email = email;
+    }
 }
+
