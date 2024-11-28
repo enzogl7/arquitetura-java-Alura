@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    private CriarUsuario criarUsuario;
+    private final CriarUsuario criarUsuario;
+
+    public UsuarioController(CriarUsuario criarUsuario) {
+        this.criarUsuario = criarUsuario;
+    }
 
 
     @PostMapping
